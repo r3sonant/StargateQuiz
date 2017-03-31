@@ -24,7 +24,7 @@ public class QuizActivity extends AppCompatActivity {
 
     public void hideView(View v) {
 
-        // Oi!!! STEEV-----Get RadioButton checked state and save it to somewhere - An array maybe, or just variables!!!!!!!!!
+        // Oi!!! STEEV-----Get RadioButton checked state and save it to somewhere - An array maybe, or just variables!!!!!!!
         setContentView(R.layout.activity_quiz);
         View view = findViewById(R.id.layoutQuestion1);
         view.setVisibility(View.INVISIBLE);
