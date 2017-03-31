@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Stargate Quiz</string>
+
+    <!-- Landing page -->
+    <string name="headerText">Stargate Quiz</string>
+    <string name="enter">Click to Enter the Stargate Quiz</string>
+
+    <!-- Welcome page -->
+    <string name="instructions">Welcome to the Stargate Quiz. \n\n\nPlease enter your name in the text box below.\n\nThen click the Start button to begin the quiz\n\n</string>
+    <string name="enterName">Name: (Jon)</string>
+
+    <!-- Question 1 -->
+    <string name="questionNumber1">Question 1.</string>
+    <string name="question1">In the film Stargate where was the first Earth Stargate discovered?</string>
+    <string name="answer1A">Tenochtitlan</string>
+    <string name="answer1B">Athens</string>
+    <string name="answer1C">Giza</string>
+    <string name="answer1D">Rome</string>
+
+    <!-- Question 2 -->
+    <string name="questionNumber2">Question 2.</string>
+    <string name="question2">In Stargate SG1 what race does Teal\'c of Chulak belong to?</string>
+    <string name="answer2A">Human</string>
+    <string name="answer2B">Jaffa</string>
+    <string name="answer2C">Goa\'uld</string>
+    <string name="answer2D">Asgard</string>
+
+    <!-- Question 3 -->
+    <string name="questionNumber3">Question 3.</string>
+    <string name="question3">What are human from Earth known throughout the galaxy as in the Stargate series?</string>
+    <string name="answer3A">Mauri</string>
+    <string name="answer3B">Ori</string>
+    <string name="answer3C">Hobbits</string>
+    <string name="answer3D">Tau\'ri</string>
+
+
+</resources>
