@@ -2,5 +2,9 @@
 <resources>
     <dimen name="questionMargin">16dp</dimen>
     <dimen name="answerMargin">8dp</dimen>
+    <dimen name="marginTop">8dp</dimen>
+    <dimen name="marginBottom">8dp</dimen>
+    <dimen name="marginLeft">8dp</dimen>
+    <dimen name="marginRight">8dp</dimen>
 
 </resources>

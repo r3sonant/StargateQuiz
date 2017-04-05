@@ -1,9 +1,4 @@
 package com.weirdresoance.android.stargatequiz;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -15,28 +10,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RadioButton;
-
-
-import org.w3c.dom.Text;
-
-import static android.R.attr.breakStrategy;
-import static android.R.attr.checked;
-import static android.R.attr.id;
-import static android.R.attr.name;
-import static android.R.id.message;
-import static android.media.CamcorderProfile.get;
-//import static com.weirdresoance.android.stargatequiz.MainActivity.userAnswers;
 import static com.weirdresoance.android.stargatequiz.MainActivity.score;
 import static com.weirdresoance.android.stargatequiz.MainActivity.userName;
 import static com.weirdresoance.android.stargatequiz.R.id.finish;
 import static com.weirdresoance.android.stargatequiz.R.id.mainQuestionView;
 import static com.weirdresoance.android.stargatequiz.R.id.next;
-import static com.weirdresoance.android.stargatequiz.R.id.q1Result;
-import static com.weirdresoance.android.stargatequiz.R.id.q1YourAnswer;
 import static com.weirdresoance.android.stargatequiz.R.id.radioButtonQ1A;
 import static com.weirdresoance.android.stargatequiz.R.id.resultsSummary;
-import static com.weirdresoance.android.stargatequiz.R.string.question3;
-import static java.lang.Integer.valueOf;
 
 
 public class QuizActivity extends AppCompatActivity {
@@ -139,13 +119,8 @@ public class QuizActivity extends AppCompatActivity {
      * @param v
      */
     public void hideCurrentQuestion(View v) {
-
-
-
         //DELETE THIS AFTER TESTING !!!!!!!
         isAnswered = true;
-
-
 
         // Check to make sure the user has answered the question before proceeding
         if (isAnswered) {
@@ -193,9 +168,6 @@ public class QuizActivity extends AppCompatActivity {
             case 5:
                 question4Commit();
                 break;
-/*            case 6:
-                question5Commit();
-                break;*/
         }
 
         // Set the Question number header text
@@ -244,22 +216,6 @@ public class QuizActivity extends AppCompatActivity {
     }
 
     public void question1Commit() {
-        //NEEDS TO OVERWRITE VALUE
-        //userAnswers.add(q1AnswerID);
-        //Integer now = userAnswers.get(0);
-        //Toast.makeText(QuizActivity.this, String.valueOf(now), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(QuizActivity.this, String.valueOf(R.id.radioButtonQ1A), Toast.LENGTH_SHORT).show();
-        // Toast.makeText(QuizActivity.this, String.valueOf(R.id.radioButtonQ1B), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(QuizActivity.this, String.valueOf(R.id.radioButtonQ1C), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(QuizActivity.this, String.valueOf(R.id.radioButtonQ1D), Toast.LENGTH_SHORT).show();
-        //Toast.makeText(QuizActivity.this, message, Toast.LENGTH_SHORT).show();
-
-
-
-
-        //int userAnsweredQ1 = q1AnswerID;
-
-
         // GET THE ID OF THE CORRECT ANSWER
         int correctAnswerQ1Id = R.id.radioButtonQ1C;
 
@@ -271,18 +227,10 @@ public class QuizActivity extends AppCompatActivity {
         RadioButton rbUserAnswer = (RadioButton) findViewById(q1AnswerID);
         String userAnsweredTextQ1 = rbUserAnswer.getText().toString();
 
-        //RadioButton rb = (RadioButton) findViewById(userAnsweredQ1);
-        //String correctAnswerTextQ1 = rb.getText().toString();
-
         ((TextView) findViewById(R.id.q1YourAnswer)).setText(userAnsweredTextQ1);
 
         if (q1AnswerID == correctAnswerQ1Id) {
-            TextView q1ResultText = (TextView) findViewById(q1Result);
-            q1ResultText.setText(correctAnswerTextQ1);
             MainActivity.score++;
-            //TextView q1Result = (TextView) findViewById(R.id.question1Result);
-            //q1Result.setText("Hello");
-            //Toast.makeText(QuizActivity.this, "Correct", Toast.LENGTH_SHORT).show();
         }
 
     }

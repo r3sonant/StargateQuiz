@@ -16,7 +16,8 @@
         android:id="@+id/mainQuestionView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <TextView
             android:id="@+id/questionHeader"
@@ -54,8 +55,8 @@
                     style="@style/radioButtonAnswerText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="onRadioButtonClickedQ1"
                     android:layout_marginLeft="@dimen/answerMargin"
+                    android:onClick="onRadioButtonClickedQ1"
                     android:text="@string/answer1A" />
 
                 <RadioButton
@@ -109,9 +110,9 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/stargatecharacters"/>
+                android:layout_marginTop="8dp"
+                android:src="@drawable/stargatecharacters" />
 
             <CheckBox
                 android:id="@+id/checkboxQ2A"
@@ -164,6 +165,40 @@
             android:orientation="vertical"
             android:visibility="gone">
 
+            <TextView
+                style="@style/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6"/>
+
+            <TextView
+                style="@style/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="9"/>
+
+            <TextView
+                style="@style/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="11"/>
+
+            <TextView
+                style="@style/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="12"/>
+
+            <EditText
+                android:id="@+id/q3Entry"
+                style="@style/answerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/questionMargin"
+                android:hint="Numeric or text entry for the number, we should be able to handle it :)"
+                android:inputType="textCapWords"
+                android:layout_below="@+id/q3Answer"/>
+
         </LinearLayout>
 
         <!-- Question 4 -->
@@ -171,13 +206,60 @@
             android:id="@+id/layoutQuestion4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:orientation="vertical"
             android:visibility="gone">
+
+            <TextView
+                android:id="@+id/question4"
+                style="@style/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/questionMargin"
+                android:text="@string/question4" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupQ4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/radioButtonQ4A"
+                    style="@style/radioButtonAnswerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:onClick="onRadioButtonClickedQ1"
+                    android:text="@string/answer4A" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonQ4B"
+                    style="@style/radioButtonAnswerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:onClick="onRadioButtonClickedQ1"
+                    android:text="@string/answer4B" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonQ4C"
+                    style="@style/radioButtonAnswerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:onClick="onRadioButtonClickedQ1"
+                    android:text="@string/answer4C" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonQ4D"
+                    style="@style/radioButtonAnswerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:onClick="onRadioButtonClickedQ1"
+                    android:text="@string/answer4D" />
+
+            </RadioGroup>
 
         </LinearLayout>
 
@@ -193,6 +275,28 @@
             android:layout_marginTop="8dp"
             android:orientation="vertical"
             android:visibility="gone">
+
+            <TextView
+                android:id="@+id/question5"
+                style="@style/questionText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/questionMargin"
+                android:text="@string/question5" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/richarddeananderson"/>
+
+            <EditText
+                android:id="@+id/q5Entry"
+                style="@style/answerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/questionMargin"
+                android:hint=""
+                android:inputType="textCapWords" />
 
         </LinearLayout>
 
@@ -211,62 +315,103 @@
 
             <!-- Quiz Results Header -->
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 style="@style/questionNumberText"
-                android:text="@string/quizResultsHeader" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/quizResultsHeader"
+                android:textAlignment="center" />
 
-            <!-- Question 1 Title Text -->
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/score"
                 style="@style/questionText"
-                android:text="Question 1" />
-
-            <!-- Q1 Correct Answer Text-->
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Question: In the film Stargate where was the first Earth Stargate discovered" />
+                android:text="Your Result Was - TO BE REPLACED WITH RESULT FROM CODE" />
 
-            <!-- Q1 Correct Answer -->
-            <TextView
+            <!-- Question 1 Answers LinearLayout -->
+            <LinearLayout
+                android:id="@+id/q1ResultParent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/answer1C" />
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Your answer:" />
+                <!-- Question 1 Title Text -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Question 1" />
 
-            <TextView
-                android:id="@+id/q1YourAnswer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="" />
+                <!-- Q1 Question -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="In the film Stargate where was the first Stargate discovered?" />
 
-            <TextView
-                android:id="@+id/q1Correct"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Well done, you answered correctly"
-                android:visibility="gone" />
+                <!-- Q1 Correct Answer Text -->
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Correct Answer/s: " />
 
-            <TextView
-                android:id="@+id/q1InCorrect"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Sorry, you ansered incorrectly"
-                android:visibility="gone" />
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/answer1C" />
 
-            <TextView
-                android:id="@+id/q1Result"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="" />
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Your answer:" />
+
+                <TextView
+                    android:id="@+id/q1YourAnswer"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/q1Correct"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Well done, you answered correctly"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q1InCorrect"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Sorry, you ansered incorrectly"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
 
         </LinearLayout>
+
     </ScrollView>
 
     <Button
@@ -293,7 +438,6 @@
         android:onClick="hideCurrentQuestion"
         android:text="Next" />
 
-
     <Button
         android:id="@+id/finish"
         android:layout_width="wrap_content"
@@ -305,7 +449,7 @@
         android:layout_marginRight="8dp"
         android:onClick="hideCurrentQuestion"
         android:text="Finish"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
 </RelativeLayout>

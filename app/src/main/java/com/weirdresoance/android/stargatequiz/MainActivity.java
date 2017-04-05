@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static String userName;
     public static int score;
-    //public static ArrayList<Integer> userAnswers = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
