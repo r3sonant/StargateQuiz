@@ -8,7 +8,8 @@ import android.widget.EditText;
 
 public class WelcomeActivity extends AppCompatActivity {
 
-    static String userName;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,9 +20,8 @@ public class WelcomeActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
 
-        EditText name = (EditText)findViewById(R.id.nameEntry);
-        userName = name.getText().toString();
-
-
+        // Get the users name
+        EditText name = (EditText) findViewById(R.id.nameEntry);
+        MainActivity.userName = name.getText().toString();
     }
 }

@@ -8,18 +8,26 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.Hashtable;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static String userName;
+    public static int score;
+    //public static ArrayList<Integer> userAnswers = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
-    /** Called when the user taps the button */
+    /**
+     * Called when the user taps the screen. The Stargate spins round and shrinks
+     */
     public void turnPage(View view) {
         Intent intent = new Intent(this, WelcomeActivity.class);
         startActivity(intent);
