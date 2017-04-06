@@ -48,6 +48,7 @@
 
     <!-- Question 5-->
     <string name="question5">What is the name of the actor who plays the character shown in the image below?</string>
+    <string name="answer5">Richard Dean Anderson</string>
 
     <!-- Question 6 -->
     <string name="question6">In Stargate SG1 what race does Teal\'c of Chulak belong to?</string>
@@ -58,7 +59,7 @@
 
     <!-- Quiz Results -->
     <string name="quizResultsHeader">Quiz Results</string>
-
+    <string name="correct_answer_is">Correct Answer/s:</string>
 
 
 

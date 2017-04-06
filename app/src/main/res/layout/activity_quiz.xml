@@ -229,7 +229,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/answerMargin"
-                    android:onClick="onRadioButtonClickedQ1"
+                    android:onClick="onRadioButtonClickedQ4"
                     android:text="@string/answer4A" />
 
                 <RadioButton
@@ -238,7 +238,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/answerMargin"
-                    android:onClick="onRadioButtonClickedQ1"
+                    android:onClick="onRadioButtonClickedQ4"
                     android:text="@string/answer4B" />
 
                 <RadioButton
@@ -247,7 +247,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/answerMargin"
-                    android:onClick="onRadioButtonClickedQ1"
+                    android:onClick="onRadioButtonClickedQ4"
                     android:text="@string/answer4C" />
 
                 <RadioButton
@@ -256,7 +256,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/answerMargin"
-                    android:onClick="onRadioButtonClickedQ1"
+                    android:onClick="onRadioButtonClickedQ4"
                     android:text="@string/answer4D" />
 
             </RadioGroup>
@@ -350,7 +350,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="In the film Stargate where was the first Stargate discovered?" />
+                    android:text="@string/question1" />
 
                 <!-- Q1 Correct Answer Text -->
                 <TextView
@@ -359,7 +359,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Correct Answer/s: " />
+                    android:text="@string/correct_answer_is" />
 
                 <TextView
                     style="@style/answerText"
@@ -409,8 +409,374 @@
 
             </LinearLayout>
 
+            <!-- Question 2 Answers LinearLayout -->
+            <LinearLayout
+                android:id="@+id/q2ResultParent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <!-- Question 2 Title Text -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Question 2" />
+
+                <!-- Q2 Question -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/question2" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/stargatecharacters" />
+
+                <!-- Q2 Correct Answer Text -->
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/correct_answer_is" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/answer2B" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/answer2D" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Your answer:" />
+
+                <TextView
+                    android:id="@+id/q2_1YourAnswer"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/q2_2YourAnswer"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/q2Correct"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Well done, you answered correctly"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q2InCorrect"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Sorry, you ansered incorrectly"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <!-- Question 3 Answers LinearLayout -->
+            <LinearLayout
+                android:id="@+id/q3ResultParent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <!-- Question 3 Title Text -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Question 3" />
+
+                <!-- Q3 Question -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/question3" />
+
+                <!-- Q3 Correct Answer Text -->
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/correct_answer_is" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="9" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Your answer:" />
+
+                <TextView
+                    android:id="@+id/q3_YourAnswer"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/q3Correct"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Well done, you answered correctly"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q3InCorrect"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Sorry, you ansered incorrectly"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <!-- Question 4 Answers LinearLayout -->
+            <LinearLayout
+                android:id="@+id/q4ResultParent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <!-- Question 4 Title Text -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Question 4" />
+
+                <!-- Q4 Question -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/question4" />
+
+                <!-- Q4 Correct Answer Text -->
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/correct_answer_is" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/answer4D" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Your answer:" />
+
+                <TextView
+                    android:id="@+id/q4YourAnswer"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/q4Correct"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Well done, you answered correctly"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q4InCorrect"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Sorry, you ansered incorrectly"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <!-- Question 5 Answers LinearLayout -->
+            <LinearLayout
+                android:id="@+id/q5ResultParent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <!-- Question 5 Title Text -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:text="Question 5" />
+
+                <!-- Q5 Question -->
+                <TextView
+                    style="@style/questionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/question5" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/richarddeananderson"/>
+
+                <!-- Q5 Correct Answer Text -->
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/correct_answer_is" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Richard Dean Anderson" />
+
+                <TextView
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Your answer:" />
+
+                <TextView
+                    android:id="@+id/q5_YourAnswer"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/q5Correct"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Well done, you answered correctly"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/q5InCorrect"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="Sorry, you ansered incorrectly"
+                    android:visibility="gone" />
+
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/restartResultsView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:onClick="restartQuiz"
+                android:text="Restart" />
 
         </LinearLayout>
+
+
 
     </ScrollView>
 
