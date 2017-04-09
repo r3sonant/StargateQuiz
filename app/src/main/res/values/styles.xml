@@ -16,8 +16,7 @@
     <style name="enterText">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">monospace</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">roboto</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
@@ -28,9 +27,9 @@
     <style name="questionNumberText">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">24sp</item>
-        <item name="android:fontFamily">monospace</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">roboto</item>
         <item name="android:shadowColor">#000000</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">20</item>
@@ -40,8 +39,7 @@
     <style name="questionText">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">monospace</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">roboto</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
@@ -52,8 +50,7 @@
     <style name="radioButtonAnswerText">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">monospace</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">roboto</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
@@ -63,12 +60,31 @@
     <style name="answerText">
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:fontFamily">monospace</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">roboto</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">0</item>
         <item name="android:shadowRadius">20</item>
+    </style>
+
+    <style name="question3">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">roboto</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+        <item name="android:shadowRadius">20</item>
+    </style>
+
+    <!-- Line Separator Style -->
+    <style name="lineSeparator">
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">#444444</item>
     </style>
 
 </resources>

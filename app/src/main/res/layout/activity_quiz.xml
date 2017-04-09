@@ -30,7 +30,7 @@
 
         <!-- Question 1-->
         <LinearLayout
-            android:id="@+id/layoutQuestion1"
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -93,7 +93,7 @@
 
         <!-- Question 2 -->
         <LinearLayout
-            android:id="@+id/layoutQuestion2"
+            android:id="@+id/layout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -154,7 +154,7 @@
 
         <!-- Question 3 -->
         <LinearLayout
-            android:id="@+id/layoutQuestion3"
+            android:id="@+id/layout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -166,28 +166,40 @@
             android:visibility="gone">
 
             <TextView
+                android:id="@+id/question3"
                 style="@style/questionText"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="6"/>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/questionMargin"
+                android:text="@string/question3" />
 
             <TextView
-                style="@style/questionText"
+                style="@style/question3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="9"/>
+                android:gravity="center"
+                android:text="@string/question3A" />
 
             <TextView
-                style="@style/questionText"
+                style="@style/question3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="11"/>
+                android:gravity="center"
+                android:text="@string/question3B" />
 
             <TextView
-                style="@style/questionText"
+                style="@style/question3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="12"/>
+                android:gravity="center"
+                android:text="@string/question3C" />
+
+            <TextView
+                style="@style/question3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/question3D" />
 
             <EditText
                 android:id="@+id/q3Entry"
@@ -195,15 +207,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/questionMargin"
-                android:hint="Numeric or text entry for the number, we should be able to handle it :)"
-                android:inputType="textCapWords"
-                android:layout_below="@+id/q3Answer"/>
+                android:gravity="center"
+                android:hint="@string/q3EditTextHint"
+                android:inputType="numberDecimal"
+                android:maxLines="1" />
 
         </LinearLayout>
 
         <!-- Question 4 -->
         <LinearLayout
-            android:id="@+id/layoutQuestion4"
+            android:id="@+id/layout4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -265,7 +278,7 @@
 
         <!-- Question 5 -->
         <LinearLayout
-            android:id="@+id/layoutQuestion5"
+            android:id="@+id/layout5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -287,7 +300,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/richarddeananderson"/>
+                android:src="@drawable/richarddeananderson" />
 
             <EditText
                 android:id="@+id/q5Entry"
@@ -295,7 +308,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/questionMargin"
-                android:hint=""
+                android:hint="@string/q5EditText"
                 android:inputType="textCapWords" />
 
         </LinearLayout>
@@ -303,7 +316,7 @@
     </LinearLayout>
 
     <ScrollView
-        android:id="@+id/resultsSummary"
+        android:id="@+id/layout6"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone">
@@ -326,7 +339,13 @@
                 style="@style/questionText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Your Result Was - TO BE REPLACED WITH RESULT FROM CODE" />
+                android:text=""
+                android:textAlignment="center" />
+
+            <View
+                style="@style/lineSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
 
             <!-- Question 1 Answers LinearLayout -->
             <LinearLayout
@@ -341,8 +360,8 @@
                     style="@style/questionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Question 1" />
+                    android:text="@string/q1"
+                    android:textColor="@color/colorAccent" />
 
                 <!-- Q1 Question -->
                 <TextView
@@ -359,7 +378,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="@string/correct_answer_is" />
+                    android:text="@string/correct_answer_is"
+                    android:textStyle="italic" />
 
                 <TextView
                     style="@style/answerText"
@@ -375,7 +395,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Your answer:" />
+                    android:text="@string/yourAnswer"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/q1YourAnswer"
@@ -393,7 +414,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Well done, you answered correctly"
+                    android:text="@string/wellDone"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <TextView
@@ -403,8 +425,14 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Sorry, you ansered incorrectly"
+                    android:text="@string/sorry"
+                    android:textStyle="bold"
                     android:visibility="gone" />
+
+                <View
+                    style="@style/lineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
 
             </LinearLayout>
@@ -422,8 +450,8 @@
                     style="@style/questionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Question 2" />
+                    android:text="@string/q2"
+                    android:textColor="@color/colorAccent" />
 
                 <!-- Q2 Question -->
                 <TextView
@@ -447,7 +475,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="@string/correct_answer_is" />
+                    android:text="@string/correct_answer_is"
+                    android:textStyle="italic" />
 
                 <TextView
                     style="@style/answerText"
@@ -471,7 +500,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Your answer:" />
+                    android:text="@string/yourAnswer"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/q2_1YourAnswer"
@@ -498,7 +528,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Well done, you answered correctly"
+                    android:text="@string/wellDone"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <TextView
@@ -508,8 +539,14 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Sorry, you ansered incorrectly"
+                    android:text="@string/sorry"
+                    android:textStyle="bold"
                     android:visibility="gone" />
+
+                <View
+                    style="@style/lineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
 
             </LinearLayout>
@@ -527,8 +564,8 @@
                     style="@style/questionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Question 3" />
+                    android:text="@string/q3"
+                    android:textColor="@color/colorAccent" />
 
                 <!-- Q3 Question -->
                 <TextView
@@ -545,7 +582,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="@string/correct_answer_is" />
+                    android:text="@string/correct_answer_is"
+                    android:textStyle="italic" />
 
                 <TextView
                     style="@style/answerText"
@@ -561,7 +599,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Your answer:" />
+                    android:text="@string/yourAnswer"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/q3_YourAnswer"
@@ -579,7 +618,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Well done, you answered correctly"
+                    android:text="@string/wellDone"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <TextView
@@ -589,9 +629,14 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Sorry, you ansered incorrectly"
+                    android:text="@string/sorry"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
+                <View
+                    style="@style/lineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
             </LinearLayout>
 
@@ -608,8 +653,8 @@
                     style="@style/questionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Question 4" />
+                    android:text="@string/q4"
+                    android:textColor="@color/colorAccent" />
 
                 <!-- Q4 Question -->
                 <TextView
@@ -626,7 +671,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="@string/correct_answer_is" />
+                    android:text="@string/correct_answer_is"
+                    android:textStyle="italic" />
 
                 <TextView
                     style="@style/answerText"
@@ -642,7 +688,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Your answer:" />
+                    android:text="@string/yourAnswer"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/q4YourAnswer"
@@ -660,7 +707,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Well done, you answered correctly"
+                    android:text="@string/wellDone"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <TextView
@@ -670,9 +718,14 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Sorry, you ansered incorrectly"
+                    android:text="@string/sorry"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
+                <View
+                    style="@style/lineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
 
             </LinearLayout>
 
@@ -689,8 +742,8 @@
                     style="@style/questionText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Question 5" />
+                    android:text="@string/q5"
+                    android:textColor="@color/colorAccent" />
 
                 <!-- Q5 Question -->
                 <TextView
@@ -703,7 +756,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/richarddeananderson"/>
+                    android:src="@drawable/richarddeananderson" />
 
                 <!-- Q5 Correct Answer Text -->
                 <TextView
@@ -712,7 +765,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="@string/correct_answer_is" />
+                    android:text="@string/correct_answer_is"
+                    android:textStyle="italic" />
 
                 <TextView
                     style="@style/answerText"
@@ -720,7 +774,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Richard Dean Anderson" />
+                    android:text="@string/answer5" />
 
                 <TextView
                     style="@style/answerText"
@@ -728,7 +782,8 @@
                     android:layout_height="match_parent"
                     android:layout_marginLeft="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Your answer:" />
+                    android:text="@string/yourAnswer"
+                    android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/q5_YourAnswer"
@@ -746,7 +801,8 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Well done, you answered correctly"
+                    android:text="@string/wellDone"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <TextView
@@ -756,9 +812,25 @@
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
                     android:layout_marginTop="@dimen/marginTop"
-                    android:text="Sorry, you ansered incorrectly"
+                    android:text="@string/sorry"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
+                <View
+                    style="@style/lineSeparator"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <!-- Thank you and farewell, or see you again -->
+                <TextView
+                    android:id="@+id/goodbyeOrDoAgain"
+                    style="@style/answerText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/answerMargin"
+                    android:layout_marginTop="@dimen/marginTop"
+                    android:text="@string/thankYou"
+                    android:textAlignment="center" />
 
             </LinearLayout>
 
@@ -772,11 +844,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:onClick="restartQuiz"
-                android:text="Restart" />
+                android:text="@string/restart" />
 
         </LinearLayout>
-
-
 
     </ScrollView>
 
@@ -787,10 +857,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:onClick="restartQuiz"
-        android:text="Restart" />
+        android:text="@string/restart" />
 
     <Button
         android:id="@+id/next"
@@ -802,20 +872,6 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:onClick="hideCurrentQuestion"
-        android:text="Next" />
-
-    <Button
-        android:id="@+id/finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:onClick="hideCurrentQuestion"
-        android:text="Finish"
-        android:visibility="gone" />
-
+        android:text="@string/next" />
 
 </RelativeLayout>

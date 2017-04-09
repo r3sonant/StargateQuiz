@@ -5,15 +5,23 @@
     <string name="headerText">Stargate Quiz</string>
     <string name="enter">Click to Enter the Stargate Quiz</string>
 
+    <string name="welcome">Welcome to the Stargate Quiz</string>
+
     <!-- Welcome page -->
-    <string name="instructions">Welcome to the Stargate Quiz. \n\n\nPlease enter your name in the text box below.\n\nThen click the Start button to begin the quiz\n\nWhen you have answered the question click Next.\n\nThere is no going back!</string>
-    <string name="enterName">Name: (Jon)</string>
+    <string name="instructions">Please enter your name in the text box below and tap Start</string>
+    <string name="enterName">Name</string>
+    <string name="noGoingBack">There is no turning back!</string>
 
     <!-- Please answer the question toast message -->
     <string name="pleaseAnswer">Please answer the question before proceeding</string>
 
+    <!-- Button Text-->
+    <string name="nextButtonText">Next</string>
+    <string name="finishButtonText">Finish</string>
+
     <!-- Question Header "Question" -->
     <string name="questionNumber">Question 1</string>
+    <string name="layoutText">layout</string>
 
     <!-- Question 1 -->
     <string name="question1">In the film Stargate where was the first Earth Stargate discovered?</string>
@@ -23,7 +31,7 @@
     <string name="answer1D">Rome</string>
 
     <!-- Question 2 -->
-    <string name="question2">What are the names of the characters shown in the image below? Please only select 2.</string>
+    <string name="question2">What are the names of the characters shown in the image below?</string>
     <string name="answer2A">Daniel Jackson</string>
     <string name="answer2B">Walter Harriman</string>
     <string name="answer2C">Apophis</string>
@@ -49,6 +57,7 @@
     <!-- Question 5-->
     <string name="question5">What is the name of the actor who plays the character shown in the image below?</string>
     <string name="answer5">Richard Dean Anderson</string>
+    <string name="q5EditText">Actors name....</string>
 
     <!-- Question 6 -->
     <string name="question6">In Stargate SG1 what race does Teal\'c of Chulak belong to?</string>
@@ -59,8 +68,22 @@
 
     <!-- Quiz Results -->
     <string name="quizResultsHeader">Quiz Results</string>
-    <string name="correct_answer_is">Correct Answer/s:</string>
+    <string name="correct_answer_is">Correct Answer:</string>
+    <string name="questionNumberText">Question</string>
+    <string name="q3EditTextHint">Numeric entry</string>
+    <string name="q1">Question 1</string>
+    <string name="yourAnswer">Your answer:</string>
+    <string name="wellDone">Well done, you answered correctly</string>
+    <string name="sorry">Sorry, you answered incorrectly</string>
+    <string name="q2">Question 2</string>
+    <string name="q3">Question 3</string>
+    <string name="q4">Question 4</string>
+    <string name="q5">Question 5</string>
+    <string name="thankYou">Thank you for taking the Stargate Quiz.\n\nTry again? Tap Restart.</string>
 
-
+    <!-- Button text -->
+    <string name="start">Start</string>
+    <string name="restart">Restart</string>
+    <string name="next">Next</string>
 
 </resources>

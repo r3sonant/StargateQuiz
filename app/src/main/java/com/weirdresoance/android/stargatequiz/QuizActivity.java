@@ -1,8 +1,10 @@
 package com.weirdresoance.android.stargatequiz;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -12,38 +14,32 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RadioButton;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-import static android.R.attr.name;
+import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static com.weirdresoance.android.stargatequiz.MainActivity.score;
 import static com.weirdresoance.android.stargatequiz.MainActivity.userName;
 import static com.weirdresoance.android.stargatequiz.R.id.checkboxQ2A;
 import static com.weirdresoance.android.stargatequiz.R.id.checkboxQ2B;
 import static com.weirdresoance.android.stargatequiz.R.id.checkboxQ2C;
 import static com.weirdresoance.android.stargatequiz.R.id.checkboxQ2D;
-import static com.weirdresoance.android.stargatequiz.R.id.finish;
+import static com.weirdresoance.android.stargatequiz.R.id.layout6;
 import static com.weirdresoance.android.stargatequiz.R.id.mainQuestionView;
 import static com.weirdresoance.android.stargatequiz.R.id.next;
-import static com.weirdresoance.android.stargatequiz.R.id.q1Correct;
-import static com.weirdresoance.android.stargatequiz.R.id.q3Answer;
 import static com.weirdresoance.android.stargatequiz.R.id.radioButtonQ1A;
 import static com.weirdresoance.android.stargatequiz.R.id.radioButtonQ4A;
 import static com.weirdresoance.android.stargatequiz.R.id.restart;
-import static com.weirdresoance.android.stargatequiz.R.id.resultsSummary;
 
 
 public class QuizActivity extends AppCompatActivity {
 
+    // Declare variables
     RadioButton radioButton;
-    //CheckBox checkBox;
     int quizLayoutNumber = 1;
     boolean isAnswered = false;
     int q1AnswerID;
     int q4AnswerID;
     int q2checkedCount;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +50,18 @@ public class QuizActivity extends AppCompatActivity {
         clearAnswers();
     }
 
-    // Question 1 Radio Buttons onClick
-    public void onRadioButtonClickedQ1(View view) {
+    /**
+     * Question 1 Radio Buttons onClick
+     *
+     * @param v
+     */
+    public void onRadioButtonClickedQ1(View v) {
         // Set the isAnswered boolean to true as we wouldn't be here if the user hadn't click on a radiobutton
         isAnswered = true;
 
         // Check which radio button was clicked
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
+        boolean checked = ((RadioButton) v).isChecked();
+        switch (v.getId()) {
             case R.id.radioButtonQ1A:
                 if (checked)
                     q1AnswerID = R.id.radioButtonQ1A;
@@ -85,11 +85,16 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-    public void onCheckboxClickedQ2(View view) {
+    /**
+     * Question 2 checkboxes
+     *
+     * @param v
+     */
+    public void onCheckboxClickedQ2(View v) {
         if (q2checkedCount < 2) {
             // Check which checkbox was clicked
-            boolean checked = ((CheckBox) view).isChecked();
-            switch (view.getId()) {
+            boolean checked = ((CheckBox) v).isChecked();
+            switch (v.getId()) {
                 case R.id.checkboxQ2A:
                     if (checked) q2checkedCount++;
                     else q2checkedCount--;
@@ -111,6 +116,7 @@ public class QuizActivity extends AppCompatActivity {
             }
 
         } else {
+            // Check the user hasn't checked too many boxes. If they have clear them all
             Toast.makeText(QuizActivity.this, R.string.tooManyChecked, Toast.LENGTH_SHORT).show();
             CheckBox checkBoxA = (CheckBox) findViewById(R.id.checkboxQ2A);
             checkBoxA.setChecked(false);
@@ -124,19 +130,24 @@ public class QuizActivity extends AppCompatActivity {
             isAnswered = false;
         }
 
+        // Set isAnswered to true if the user has checked the correct amount of boxes
         if (q2checkedCount == 2) {
             isAnswered = true;
         } else isAnswered = false;
     }
 
-    // Question 1 Radio Buttons onClick
-    public void onRadioButtonClickedQ4(View view) {
+    /**
+     * Question 4 Radio Buttons onClick
+     *
+     * @param v
+     */
+    public void onRadioButtonClickedQ4(View v) {
         // Set the isAnswered boolean to true as we wouldn't be here if the user hadn't click on a radiobutton
         isAnswered = true;
 
         // Check which radio button was clicked
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
+        boolean checked = ((RadioButton) v).isChecked();
+        switch (v.getId()) {
             case R.id.radioButtonQ4A:
                 if (checked)
                     q4AnswerID = radioButtonQ4A;
@@ -166,13 +177,22 @@ public class QuizActivity extends AppCompatActivity {
      * @param v
      */
     public void hideCurrentQuestion(View v) {
-        //DELETE THIS AFTER TESTING !!!!!!!
-        isAnswered = true;
+        // Check to see if text entry fields have anything in them for questions 3 and 5
+        EditText isQ3Answered = (EditText) findViewById(R.id.q3Entry);
+        String q3FieldBlank = isQ3Answered.getText().toString();
+        EditText isQ5Answered = (EditText) findViewById(R.id.q5Entry);
+        String q5FieldBlank = isQ5Answered.getText().toString();
+        if (!q3FieldBlank.matches("") && (quizLayoutNumber == 3)) {
+            isAnswered = true;
+        }
+        if (!q5FieldBlank.matches("") && (quizLayoutNumber == 5)) {
+            isAnswered = true;
+        }
 
         // Check to make sure the user has answered the question before proceeding
         if (isAnswered) {
             // Create a string for the ID of the current view
-            String viewID = "layoutQuestion" + quizLayoutNumber;
+            String viewID = "layout" + quizLayoutNumber;
 
             // Convert the string into the ID of the view
             int resID = getResources().getIdentifier(viewID, "id", getPackageName());
@@ -187,14 +207,11 @@ public class QuizActivity extends AppCompatActivity {
             // and then call showNextQuestion
             quizLayoutNumber++;
             isAnswered = false;
-            if (quizLayoutNumber < 6) {
-                showNextQuestion();
-            } else question5Commit();
+
+            showNextQuestion();
         }
         // Let the user know they need to answer the question before proceeding
         else Toast.makeText(QuizActivity.this, R.string.pleaseAnswer, Toast.LENGTH_SHORT).show();
-
-
     }
 
     /**
@@ -215,13 +232,16 @@ public class QuizActivity extends AppCompatActivity {
             case 5:
                 question4Commit();
                 break;
+            case 6:
+                question5Commit();
+                break;
         }
 
         // Set the Question number header text
-        ((TextView) findViewById(R.id.questionHeader)).setText("Question " + quizLayoutNumber);
+        ((TextView) findViewById(R.id.questionHeader)).setText(getString(R.string.questionNumberText) + " " + quizLayoutNumber);
 
         // Set the viewID string
-        String viewID = "layoutQuestion" + (quizLayoutNumber);
+        String viewID = getString(R.string.layoutText) + (quizLayoutNumber);
 
         // Convert the viewID string into a view ID
         int resID = getResources().getIdentifier(viewID, "id", getPackageName());
@@ -237,11 +257,33 @@ public class QuizActivity extends AppCompatActivity {
      * @param v
      */
     public void restartQuiz(View v) {
-        String viewID = "layoutQuestion" + quizLayoutNumber;
+        String viewID = "layout" + quizLayoutNumber;
         int resID = getResources().getIdentifier(viewID, "id", getPackageName());
         View view = findViewById(resID);
         view.setVisibility(View.GONE);
         clearAnswers();
+
+        // Check if the mainQuestionView is visible and if it isn't show it
+        View mainView = findViewById(mainQuestionView);
+
+        if (!mainView.isShown()) {
+            mainView = findViewById(mainQuestionView);
+            mainView.setVisibility(View.VISIBLE);
+
+            // Change the text in the next button to Next
+            Button changeToFinish = (Button) findViewById(next);
+            changeToFinish.setText(R.string.nextButtonText);
+
+            // Show the Next button
+            Button hideFinish = (Button) findViewById(next);
+            hideFinish.setVisibility(View.VISIBLE);
+
+            // Show the Restart button but add a new one at the bottom of the scrollview
+            Button hideRestart = (Button) findViewById(restart);
+            hideRestart.setVisibility(View.VISIBLE);
+        }
+
+        // Set the quizLayoutNumber back to 1 so the first question will be shown when ShowNextQuestion is called
         quizLayoutNumber = 1;
         showNextQuestion();
     }
@@ -250,25 +292,42 @@ public class QuizActivity extends AppCompatActivity {
      * Clear all the quiz entries
      */
     public void clearAnswers() {
+        // Clear Q1 RadioGroup
         RadioGroup rG1 = (RadioGroup) findViewById(R.id.radioGroupQ1);
         rG1.clearCheck();
-        CheckBox cb1 = (CheckBox) findViewById(R.id.checkboxQ2A);
-        cb1.setChecked(false);
-        CheckBox cb2 = (CheckBox) findViewById(checkboxQ2B);
-        cb2.setChecked(false);
-        CheckBox cb3 = (CheckBox) findViewById(checkboxQ2C);
-        cb3.setChecked(false);
-        CheckBox cb4 = (CheckBox) findViewById(checkboxQ2D);
-        cb4.setChecked(false);
+
+        // Clear Q2 CheckBoxes
+        CheckBox cbQ2A = (CheckBox) findViewById(R.id.checkboxQ2A);
+        cbQ2A.setChecked(false);
+        CheckBox cbQ2B = (CheckBox) findViewById(R.id.checkboxQ2B);
+        cbQ2B.setChecked(false);
+        CheckBox cbQ2C = (CheckBox) findViewById(R.id.checkboxQ2C);
+        cbQ2C.setChecked(false);
+        CheckBox cbQ2D = (CheckBox) findViewById(R.id.checkboxQ2D);
+        cbQ2D.setChecked(false);
+        q2checkedCount = 0;
+
+        // Clear Q3
+        EditText q3Answer = (EditText) findViewById(R.id.q3Entry);
+        q3Answer.setText("");
+
+        // Clear Q4
+        RadioGroup rG4 = (RadioGroup) findViewById(R.id.radioGroupQ4);
+        rG4.clearCheck();
+
+        // Clear Q5
+        EditText q5Answer = (EditText) findViewById(R.id.q5Entry);
+        q5Answer.setText("");
+
+        isAnswered = false;
     }
 
+    /**
+     * Commit the answers in question 1 to the results page view
+     */
     public void question1Commit() {
         // GET THE ID OF THE CORRECT ANSWER
         int correctAnswerQ1Id = R.id.radioButtonQ1C;
-
-        // GET THE TEXT OF THE CORRECT ANSWER
-        RadioButton rbCorrectQ1 = (RadioButton) findViewById(correctAnswerQ1Id) ;
-        String correctAnswerTextQ1 = rbCorrectQ1.getText().toString();
 
         // GET THE TEXT OF THE USERS ANSWER
         RadioButton rbUserAnswer = (RadioButton) findViewById(q1AnswerID);
@@ -291,12 +350,10 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Commit the answers in question 2 to the results page view
+     */
     public void question2Commit() {
-
-        // Get the ID's of the correct answers
-        int correctAnswerQ2_1 = checkboxQ2B;
-        int correctAnswerQ2_2 = checkboxQ2D;
-
         // Create the ArrayList to store which checkboxes the users has checked
         ArrayList<Integer> userAnswersQ2 = new ArrayList<>();
 
@@ -329,7 +386,7 @@ public class QuizActivity extends AppCompatActivity {
         String userAnsweredTextQ2_2 = cbUserAnswer_2.getText().toString();
 
         // If the user has checked the two correct checkboxes then increment the score counter
-        if ((userAnswersQ2.get(0) == correctAnswerQ2_1) && (userAnswersQ2.get(1) == correctAnswerQ2_2)) {
+        if ((userAnswersQ2.get(0) == checkboxQ2B) && (userAnswersQ2.get(1) == checkboxQ2D)) {
             MainActivity.score++;
 
             // Get the You Answered Correctly view and set it to visible
@@ -345,6 +402,9 @@ public class QuizActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.q2_2YourAnswer)).setText(userAnsweredTextQ2_2);
     }
 
+    /**
+     * Commit the answers in question 3 to the results page view
+     */
     public void question3Commit() {
         // Get the entry to the EditText box
         EditText q3Answer = (EditText) findViewById(R.id.q3Entry);
@@ -365,13 +425,12 @@ public class QuizActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.q3_YourAnswer)).setText(userAnsweredTextQ3);
     }
 
+    /**
+     * Commit the answers in question 4 to the results page view
+     */
     public void question4Commit() {
         // GET THE ID OF THE CORRECT ANSWER
         int correctAnswerQ4Id = R.id.radioButtonQ4D;
-
-        // GET THE TEXT OF THE CORRECT ANSWER
-        RadioButton rbCorrectQ4 = (RadioButton) findViewById(correctAnswerQ4Id) ;
-        String correctAnswerTextQ4 = rbCorrectQ4.getText().toString();
 
         // GET THE TEXT OF THE USERS ANSWER
         RadioButton rbUserAnswer = (RadioButton) findViewById(q4AnswerID);
@@ -392,19 +451,18 @@ public class QuizActivity extends AppCompatActivity {
             view.setVisibility(View.VISIBLE);
         }
 
-        // Hide the next button
-        Button hideNext = (Button) findViewById(next);
-        hideNext.setVisibility(View.GONE);
-
-        // Show the Finish button
-        Button showFinish = (Button) findViewById(finish);
-        showFinish.setVisibility(View.VISIBLE);
+        // Change the text in the next button to Finish
+        Button changeToFinish = (Button) findViewById(next);
+        changeToFinish.setText(R.string.finishButtonText);
     }
 
+    /**
+     * Commit the answers in question 5 to the results page view
+     */
     public void question5Commit() {
         // Get the entry in the EditText box
         EditText q5Answer = (EditText) findViewById(R.id.q5Entry);
-        String userAnsweredTextQ5 = q5Answer.getText().toString();
+        String userAnsweredTextQ5 = q5Answer.getText().toString().trim();
 
         // Convert both strings to uppercase to compare
         String q5CorrectAnswerUpper = getString(R.string.answer5).toUpperCase();
@@ -423,16 +481,18 @@ public class QuizActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.q5_YourAnswer)).setText(userAnsweredTextQ5);
         finishQuiz();
-
     }
 
+    /**
+     * Hide the main question view and show the final results view
+     */
     public void finishQuiz() {
         // Find the main quiz view and hide it
         View view = findViewById(mainQuestionView);
         view.setVisibility(View.GONE);
 
         // Hide the Finish button
-        Button hideFinish = (Button) findViewById(finish);
+        Button hideFinish = (Button) findViewById(next);
         hideFinish.setVisibility(View.GONE);
 
         // Hide the restart button but add a new one at the bottom of the scrollview
@@ -441,14 +501,21 @@ public class QuizActivity extends AppCompatActivity {
 
         // Toast message to user
         String scoreToastMessage = "Thank you for taking part in the quiz " + userName + " You scored " + MainActivity.score + " out of 5\n\nWhen this message finishes you will be able to see a breakdown of all the questions";
-        Toast toast= Toast.makeText(getApplicationContext(), scoreToastMessage, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+        Toast toast = Toast.makeText(getApplicationContext(), scoreToastMessage, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+
+        // Increase the text size in the Toast and then show it
+        ViewGroup group = (ViewGroup) toast.getView();
+        TextView messageTextView = (TextView) group.getChildAt(0);
+        messageTextView.setTextSize(20);
+
         toast.show();
 
-        ScrollView resultsShow = (ScrollView) findViewById(resultsSummary);
+        // Set the users score at the top of the page
+        ((TextView) findViewById(R.id.score)).setText("You scored " + MainActivity.score + " /5");
+
+        ScrollView resultsShow = (ScrollView) findViewById(layout6);
         resultsShow.setVisibility(View.VISIBLE);
     }
-
-
 
 }
