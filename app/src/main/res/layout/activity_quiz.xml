@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -172,34 +171,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/questionMargin"
                 android:text="@string/question3" />
-
-            <TextView
-                style="@style/question3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/question3A" />
-
-            <TextView
-                style="@style/question3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/question3B" />
-
-            <TextView
-                style="@style/question3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/question3C" />
-
-            <TextView
-                style="@style/question3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/question3D" />
 
             <EditText
                 android:id="@+id/q3Entry"
@@ -373,11 +344,9 @@
 
                 <!-- Q1 Correct Answer Text -->
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/correct_answer_is"
                     android:textStyle="italic" />
 
@@ -386,15 +355,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/answer1C" />
 
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/yourAnswer"
                     android:textStyle="italic" />
 
@@ -404,7 +370,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
+
                     android:text="" />
 
                 <TextView
@@ -413,7 +379,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/wellDone"
                     android:textStyle="bold"
                     android:visibility="gone" />
@@ -470,11 +435,9 @@
 
                 <!-- Q2 Correct Answer Text -->
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/correct_answer_is"
                     android:textStyle="italic" />
 
@@ -491,15 +454,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/answer2D" />
 
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/yourAnswer"
                     android:textStyle="italic" />
 
@@ -577,11 +537,9 @@
 
                 <!-- Q3 Correct Answer Text -->
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/correct_answer_is"
                     android:textStyle="italic" />
 
@@ -594,11 +552,9 @@
                     android:text="9" />
 
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/yourAnswer"
                     android:textStyle="italic" />
 
@@ -666,11 +622,9 @@
 
                 <!-- Q4 Correct Answer Text -->
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/correct_answer_is"
                     android:textStyle="italic" />
 
@@ -683,11 +637,9 @@
                     android:text="@string/answer4D" />
 
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/yourAnswer"
                     android:textStyle="italic" />
 
@@ -760,11 +712,9 @@
 
                 <!-- Q5 Correct Answer Text -->
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/correct_answer_is"
                     android:textStyle="italic" />
 
@@ -777,11 +727,9 @@
                     android:text="@string/answer5" />
 
                 <TextView
-                    style="@style/answerText"
+                    style="@style/correctAndYourAnswer"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="@dimen/answerMargin"
-                    android:layout_marginTop="@dimen/marginTop"
                     android:text="@string/yourAnswer"
                     android:textStyle="italic" />
 

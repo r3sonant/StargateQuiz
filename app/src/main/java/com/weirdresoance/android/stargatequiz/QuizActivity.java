@@ -16,7 +16,6 @@ import android.widget.RadioButton;
 
 import java.util.ArrayList;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static com.weirdresoance.android.stargatequiz.MainActivity.score;
 import static com.weirdresoance.android.stargatequiz.MainActivity.userName;
 import static com.weirdresoance.android.stargatequiz.R.id.checkboxQ2A;
@@ -319,7 +318,24 @@ public class QuizActivity extends AppCompatActivity {
         EditText q5Answer = (EditText) findViewById(R.id.q5Entry);
         q5Answer.setText("");
 
+        // Reset well done and sorry views to Gone
+        findViewById(R.id.q1Correct).setVisibility(View.GONE);
+        findViewById(R.id.q1InCorrect).setVisibility(View.GONE);
+        findViewById(R.id.q2Correct).setVisibility(View.GONE);
+        findViewById(R.id.q2InCorrect).setVisibility(View.GONE);
+        findViewById(R.id.q3Correct).setVisibility(View.GONE);
+        findViewById(R.id.q3InCorrect).setVisibility(View.GONE);
+        findViewById(R.id.q4Correct).setVisibility(View.GONE);
+        findViewById(R.id.q4InCorrect).setVisibility(View.GONE);
+        findViewById(R.id.q5Correct).setVisibility(View.GONE);
+        findViewById(R.id.q5InCorrect).setVisibility(View.GONE);
+
+        // Set the results scrollview page back to the top
+        findViewById(R.id.layout6).scrollTo(0, 0);
+
+        // Set isAnswered and score to false and 0
         isAnswered = false;
+        score = 0;
     }
 
     /**
